@@ -1,0 +1,4 @@
+LOAD CSV WITH HEADERS FROM 'file:///Newdatabase.csv' AS line
+CREATE (:Movie {title: line.MovieNname, Genre: line.Genre, Director: line.Director});
+MATCH (p:MovieName)-[:KNOWS]->(f:Genere)
+RETURN p, f
